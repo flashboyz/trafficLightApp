@@ -16,36 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1za-04-Idc">
-                                <rect key="frame" x="139" y="131" width="150" height="150"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-lw-8LS">
-                                <rect key="frame" x="139" y="505" width="150" height="150"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-hS-0di">
-                                <rect key="frame" x="139" y="318" width="150" height="150"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-Et-LYd">
-                                <rect key="frame" x="119" y="725" width="191" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-Et-LYd">
+                                <rect key="frame" x="119" y="720" width="191" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXO-nP-0ZL"/>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="jHQ-gN-Pta"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1za-04-Idc">
+                                <rect key="frame" x="139" y="135" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-lw-8LS">
+                                <rect key="frame" x="139" y="509" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-hS-0di">
+                                <rect key="frame" x="139" y="322" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
-                        <constraints>
-                            <constraint firstItem="5dr-Et-LYd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Dx-Ch-EXN"/>
-                            <constraint firstItem="Bs8-hS-0di" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VfK-DM-c93"/>
-                            <constraint firstItem="iKw-lw-8LS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j3i-bo-ARD"/>
-                            <constraint firstItem="1za-04-Idc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXE-zV-gAW"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="iKw-lw-8LS" id="bGj-Ya-lZj"/>
+                        <outlet property="redLightView" destination="1za-04-Idc" id="kgp-5I-Rwc"/>
+                        <outlet property="startButton" destination="5dr-Et-LYd" id="f09-iB-BYv"/>
+                        <outlet property="yellowLightView" destination="Bs8-hS-0di" id="6a9-ec-Yby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
