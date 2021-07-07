@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenLightView: UIView!
     @IBOutlet weak var startButton: UIButton!
     
+    var redLightViewIsOn = false
+    var yellowLightViewIsOn = false
+    var greenLightViewIsOn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +26,14 @@ class ViewController: UIViewController {
         greenLightView.layer.cornerRadius = 75
         greenLightView.alpha = 0.4
         startButton.layer.cornerRadius = 10
-        
-    }
+        startButton.setTitle("START", for: .normal)
+        }
+    
     @IBAction func startButtonPressed() {
-        
-    }
-    
-    
+        startButton.setTitle("NEXT", for: .normal)
+        if !redLightViewIsOn {
+            redLightView.alpha = 1
+        }
+        }
 }
 
