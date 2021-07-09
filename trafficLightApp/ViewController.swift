@@ -19,21 +19,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        redLightView.layer.cornerRadius = 75
         redLightView.alpha = 0.4
-        yellowLightView.layer.cornerRadius = 75
         yellowLightView.alpha = 0.4
-        greenLightView.layer.cornerRadius = 75
         greenLightView.alpha = 0.4
+        
         startButton.layer.cornerRadius = 10
         startButton.setTitle("START", for: .normal)
         }
     
+    override func viewWillLayoutSubviews() {
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
+    }
+    
     @IBAction func startButtonPressed() {
         startButton.setTitle("NEXT", for: .normal)
-        if !redLightViewIsOn {
-            redLightView.alpha = 1
-        }
+        if yellowLightViewIsOn {
+                    yellowLightView.alpha = 1
+                    redLightView.alpha = 0.4
+                    yellowLightViewIsOn = false
+                    greenLightViewIsOn = true
+                } else if greenLightViewIsOn {
+                    greenLightView.alpha = 1
+                    yellowLightView.alpha = 0.4
+                    redLightViewIsOn = true
+                    greenLightViewIsOn = false
+                } else {
+                    redLightView.alpha = 1
+                    greenLightView.alpha = 0.4
+                    yellowLightViewIsOn = true
+                    redLightViewIsOn = false
+                }
         }
 }
 
